@@ -13,7 +13,8 @@ struct Tugas {
 int main() {
     vector<Tugas> daftar;
     int pilihan;
-
+    Tugas t;
+    int idx;
     do {
         cout << "\n=== Tracking Tugas Semester 3 (Vector) ===\n";
         cout << "1. Tambah Tugas\n";
@@ -25,7 +26,6 @@ int main() {
         cin.ignore();
 
         if (pilihan == 1) {
-            Tugas t;
             cout << "Nama Tugas     : ";
             getline(cin, t.nama);
             cout << "Deadline       : ";
@@ -51,7 +51,7 @@ int main() {
             }
         } 
         else if (pilihan == 3) {
-            int idx;
+
             cout << "Tugas ke-berapa yang selesai? ";
             cin >> idx;
             if (idx > 0 && idx <= daftar.size()) {
@@ -61,6 +61,10 @@ int main() {
                 cout << ">> Indeks tidak valid!\n";
             }
         }
+        else if (pilihan != 4) {
+            cout << ">> Pilihan tidak valid! Coba lagi.\n";
+        }
+
     } while (pilihan != 4);
 
     cout << "Program selesai. Semangat kerjain tugasnya ya!\n";
